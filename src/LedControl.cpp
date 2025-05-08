@@ -208,4 +208,7 @@ void LedControl::spiTransfer(int addr, volatile byte opcode, volatile byte data)
     digitalWrite(SPI_CS,HIGH);
 }    
 
-
+void LedControl::show(const byte mychar[], byte num) {
+    for (int i = 0; i < 8; i++)
+        setRow(num, i, mychar[i]);
+}
